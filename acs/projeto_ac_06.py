@@ -1,43 +1,13 @@
-# Exercícios em Aula p/ o Beecrowd 19/03
+# Hello World! (1000):
+print("Hello World!")
 
-# Jogando Cartas Fora (1110):
-def jogando_cartas_fora():
-    while True:
-        n = int(input())
-        if n == 0:
-            break
+# # Extremamente Básico (1001):
+a = int(input())
+b = int(input())
+x = a + b
+print("X =", x)
 
-        lista = list(range(n, 0, -1))
-        descartados = []
-        while len(lista) > 1:
-            descartados.append(lista.pop())
-            lista.insert(0, lista.pop())
-
-        descartados = [str(num) for num in descartados]
-        print("Discarded cards: ", descartados)
-        print("Remaining card:", lista[0])
-
-# Diamantes e Areia (1069):
-def diamantes_e_areias():
-    n = int(input())
-
-    for _ in range(n):
-        entrada = input()
-        extracao = []
-        diamantes = 0
-        for char in entrada:
-            if char == ".":
-                continue
-            if char == "<":
-                extracao.append(char)
-            else:
-                if len(extracao) >= 1 and extracao[-1] == "<":
-                    extracao.pop()
-                    diamantes += 1
-
-    print(diamantes)
-
-# Calculo Simples:
+# Calculo Simples (1010):
 def calculo_simples():
     dados1 = input()
     dados2 = input()
@@ -47,3 +17,41 @@ def calculo_simples():
 
     preco = int(dados1[1]) * float(dados1[2]) + int(dados2[1]) * float(dados2[2])
     print(f"Valor a Pagar: R$ {preco:.2f}")
+
+# O Maior (1013)
+def maior():
+    quantia = input()
+    quantia = quantia.split(" ")
+
+    x = int(quantia[0])
+    y = int(quantia[1])
+    z = int(quantia[2])
+
+    xy = ((x + y + abs (x - y)) /2)
+    xz = ((x + z + abs (x - z)) /2)
+    yz = ((y + z +abs(y - z)) /2)
+
+    if xy == xz:
+        print(x, "eh o maior")
+    if xy == yz:
+        print(y, "eh o maior")
+    if xz == yz:
+        print(z, "eh o maior")
+
+# Distância entre Dois Pontos (1015)
+def distância_entre_2():
+    x = input()
+    y = input()
+
+    x = x.split(" ")
+    y = y.split(" ")
+
+    x1= float(a[0])
+    y1 = float(a[1])
+
+    x2 = float(b[0])
+    y2 = float(b[1])
+
+    distanciaab = (((x2 - x1)**2) + ((y2 - y1)**2))**(1/2)
+
+    print(f"{distanciaab:.4}")
